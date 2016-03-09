@@ -1,0 +1,67 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Mar 07 14:25:30 2016
+
+@author: yanxiang.yu
+"""
+
+class Node(object):
+    """ represent linked list"""
+    def __init__(self, Cargo=None, Next=None):
+        self.Cargo=Cargo
+        self.Next=Next
+    
+    def __str__(self):
+        return str(self.Cargo)
+        
+#    def GeneList(self,Num):
+#        if len(Num)==1:
+#            self.Cargo=Num
+#        return self.Next
+#    
+class LinkedList(object):
+    def __init__(self):
+        self.head=None
+        self.length=0             
+
+    def insertNode(self,data):
+        node=Node(data)
+        if not self:
+            self.head==node
+        else:
+            current=self.head
+            while current.Next:
+                current=self.Next
+            current.Next=node
+
+        
+    def print_forward(self):
+        while self:
+            print self.Cargo,
+            self=self.Next 
+            
+    def print_backward(self):
+        if self.Next==None:
+            print self.Cargo,
+            return  
+        self.Next.print_backward()
+        print self.Cargo,
+            
+   
+    def NodeNum(self, Num):
+        if Num==1:        
+            return self.Cargo
+        else:
+            return self.Next.NodeNum(Num-1)
+            
+    def searchNode(self,Data):
+        i=1;        
+        while self:
+            if self.Cargo== Data:
+                return i
+            i=i+1
+            self=self.Next
+        raise ValueError("Data not in list")
+    
+
+        

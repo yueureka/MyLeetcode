@@ -1,2 +1,2 @@
 # Description
-Some sample python code I developped for Leetcode problems. 
+Here are some sample python code I developped for solving the Leetcode problems. 
